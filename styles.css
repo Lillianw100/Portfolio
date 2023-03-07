@@ -1,0 +1,16 @@
+body {
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+nav {
+    color:#ffffff;
+    font-size:20px;
+}
+nav a:hover {
+    color:lightblue;
+}
+nav a:link {
+    color:lightblue;
+}
+nav a:visited {
+    color:lightblue;
+}

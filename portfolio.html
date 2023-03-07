@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.css">
+    <title>Lillian Watkins Portfolio</title>
+    <style>
+        body {
+            margin:0 auto;
+        }
+        img {
+            max-width:100%;
+            height:auto;
+        }
+        .back {
+            background-color:rgba(30, 30, 30, 0.5);
+        }
+        /* .container1 > * {
+            border:solid 1px #ff0000;
+        } */
+        .container1 {
+            display:grid;
+            grid-template-columns:1fr 3fr;
+            grid-template-rows:500px auto;
+            background-image:url(images/backgroundphoto.png);
+            background-size:cover;
+            background-position:center;
+            background-attachment:fixed;
+            background-color:rgba(0, 0, 0, 0.3);
+            background-blend-mode:darken;
+        }
+        .logo {
+            grid-column:1/2;
+            display:flex;
+            align-items:center;
+            height:90px;
+            /* padding-bottom:20px; */
+            /* background-color:red; */
+        }
+        nav {
+            grid-column:2/3;
+            color:#ffffff;
+            display:flex;
+            align-items:center;
+            justify-content:space-around;
+            font-size:20px;
+            text-transform:uppercase;
+            /* background-color:rgba(30, 30, 30, 0.8); */
+            /* background:green; */
+        }
+        .overlay {
+            grid-column:1/3;
+            color:#ffffff;
+            font-size:64px;
+            text-transform:uppercase;
+            display:grid;
+            place-items:center;
+            /* padding-bottom:160px; */
+        }
+        header {
+        display:grid;
+        grid-template-columns:1fr 4fr;
+        grid-template-rows:190px, auto;
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:90px;
+        z-index:99;
+        transition:all 300ms ease-in-out;
+        background-color:#222222;
+        padding:0px;
+        }
+        .scroll-down header {
+        background: #222222;
+        transform:translate3d(0, -200%, 0);
+        }
+        .scroll-up header {
+        background: #222222;
+        }
+        .container2 {
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            grid-gap:20px;
+            padding:20px 40px;
+            background-color:lavender;
+        }
+        .about1 {
+            grid-column:1/3;
+            display:grid;
+            place-items:center;
+            font-size:20px;
+        }
+        .about2 {
+            grid-column:1/3;
+            display:grid;
+            place-items:center;
+            padding-top:20px;
+        }
+        .container3 {
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            grid-gap:10px;
+            background-image:url(images/graphicsbg.png);
+            background-size:cover;
+            background-position:top left; 
+            background-attachment:fixed;
+            background-color:rgba(0, 0, 0, 0.3);
+            background-blend-mode:darken;
+        }
+        h1 {
+            grid-column:1/4;
+            font-size:60px;
+            text-transform:uppercase;
+        }
+        h2 {
+            grid-column:1/4;
+            font-size:60px;
+            text-transform:uppercase;
+        }
+        h3 {
+            grid-column:1/4;
+            font-size:60px;
+            text-transform:uppercase;
+        }
+        .graphic1 {
+            grid-column:1/4;
+           
+        }
+        .graphic2 {
+            grid-column:1/4;
+           
+        }
+        .graphic3 {
+            grid-column:1/4;
+          
+        }
+        .container4 {
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            grid-gap:10px; 
+            background-color:lavender;
+        }
+        
+        .writing1 {
+            grid-column:1/4;
+
+        }
+        .writing2 {
+            grid-column:1/4;
+        }
+        .writing3 {
+            grid-column:1/4;
+        }
+        .container5 {
+            display:grid;
+            grid-template-columns:1fr 1fr 1fr;
+            background-image:url(images/contactbg.png);
+            background-size:cover;
+            background-position:center center;
+            background-attachment:fixed;
+            background-color:rgba(0, 0, 0, 0.5);
+            background-blend-mode:darken;
+            padding-bottom:40px;
+        }
+        .contactinfo {
+            grid-column:2/3;
+        }
+        h4 {
+            grid-column:1/4;
+            font-size:60px;
+            color:white;
+            place-items:center;
+            white-space:nowrap;
+            overflow:hidden;
+            text-transform:uppercase;
+            margin:0;
+            
+        }
+        .contacticons {
+            grid-column:1/4;
+            display:flex;
+            justify-content:center;
+            flex-direction:column;
+            padding-left:125px;
+            font-size:5px;
+        }
+        h5 {
+            color:white;
+            font-size:35px;
+            display:inline-block;
+            margin:0;
+            
+        }
+        .email {
+            color:white;
+            font-size:24px;
+            opacity:.7;
+            margin-right:14px;
+            }
+        .phone {
+            color:white;
+            font-size:24px;
+            opacity:.7;
+            margin-right:14px;
+        }
+        /* .edu {
+            font-size:30px;
+            color:white;
+        } */
+        /* .number {
+            font-size:30px;
+            color:white;
+        } */
+        
+        footer {
+            grid-column:1/4;
+            background-color:rgba(30, 30, 30, 0.8);
+            color:white;
+        }
+
+        #back2Top {
+width:30px; /* width of button */
+height:20px; /* height of button */
+line-height:30px;
+overflow:hidden;
+z-index:999;
+display:none; /* initially not displayed */
+cursor:pointer;
+transform:rotate(270deg); /* turns right arrow 270 degrees */
+position:fixed; /* fixed at bottom corner */
+bottom:30px; /* distance from bottom */
+right:40px; /* distance from right */
+padding:4px 4px 13px 4px; /* padding around arrow */
+border:1px solid white;
+border-radius:2px;
+background:rgba(39, 217, 245, 0.7); /* blue background with transparency */
+color:#eee; /* color of arrow */
+text-align:center;
+font-size:20px; /* size of the arrow */
+text-decoration:none;
+}
+#back2Top:link {
+background:rgba(39, 217, 245, 0.7);
+color:#eee;
+}
+#back2Top:visited {
+background:rgba(39, 217, 245, 0.7);
+color:#eee;
+}
+#back2Top:hover {
+background:rgba(39, 217, 245, 0.8);
+color:#ccc;
+}
+#back2Top:active {
+background:rgba(39, 217, 245, 0.7);
+color:#eee;
+}
+
+@media only screen and (min-width:600px) {
+    .logo {
+        grid-column:1/2;
+    }
+    nav {
+        grid-column:2/3;
+    }
+    .about1 {
+         grid-column:1/2;
+         padding-left:10px;
+        }
+     .about2 {
+         grid-column:2/3;
+         padding:0px;
+        }
+    header {
+        grid-column:1/3;
+    }
+    .graphic1 {
+        grid-column:1/2;
+    }
+    .graphic2 {
+        grid-column:2/3;
+    }
+    .graphic3 {
+        grid-column:3/4;
+    }
+    .writing1 {
+        grid-column:1/2;
+    }
+    .writing2 {
+        grid-column:2/3;
+    }
+    .writing3 {
+        grid-column:3/4;
+    }
+    .container5 {
+        grid-column:1/3;
+    }
+    .contactinfo {
+        grid-column:2/3;
+        align-items:center;
+        padding:0px;
+        }
+    .contacticons {
+        grid-column:2/3;
+        padding:0px;
+        align-items:center;
+    }
+    h4 {
+        grid-column:2/3;
+        height:auto;
+        margin:0;
+        align-items:center;
+        padding-left:80px;
+    }
+    h5 {
+        grid-column:2/3;
+        padding:0px;
+        white-space:nowrap;
+        margin:0;
+        align-items:center;
+    }
+    footer {
+        grid-column:1/4;
+    }
+}
+    </style>
+</head>
+<body class="scroll-up">
+    <header>
+    <div class="logo">
+     <img src="images/finallogo.png" alt="logo">
+    <!-- <a href="#">Lillian Watkins</a> -->
+    </div>
+    <nav>
+    <a href="#about">About</a>
+    <a href="#graphics">Graphics</a>
+    <a href="#writing">Writings</a>
+    <a href="#contact">Contact</a>
+    </nav>
+    </header>
+    <div class="container1">
+        <div class="overlay">
+            <p class="back">Lillian Watkins</p>
+        </div>
+    </div>
+    <div class="container2">
+        <div id="about"></div>
+        <div class="about1" data-aos="zoom-in-left" data-aos-duration="2000" data-aos-delay="200">
+            <h1><u>About Me:</u></h1><p>Hello! My name is Lillian Watkins and I am from Charlottesville Virginia. I am a Junior in the School of Media Arts and Design at James Madison University. I have a concentration in Interactive Design, and a minor in Creative Writing. Throughout my time here at JMU, I have fallen in love with the concept of using the internet as a means of communication. I have been allowed the opportunity to tap into my creative side and create content and web design that reflects myself as an individual. Although most of my work that is showcased here has been completed for school, I enjoy finding time outside of that letting my creativity take control, especially with writing.</p>
+        </div>
+        <div class="about2" data-aos="zoom-in-right" data-aos-duration="2000" data-aos-delay="200">
+            <img src="images/aboutmephoto.png" alt="aboutme">
+        </div>
+    </div>
+    <div class="container3">
+        <div id="graphics"></div>
+        <h2><u>Graphics</u></h2>
+        <div class="graphic1">
+        <img src="images/anxietyfinalsize.png" alt="graphic1">
+        <p style="border:3px; border-style:solid; border-color:black; padding:0.5px; background-color:#f5f5f5;">This first graphic I designed in Adobe Illustrator. With COVID, anxiety became a normal feeling for most people. I expressed the feeling of my anxiety slowly relieving itself as time went by.</p>
+    </div>
+    <div class="graphic2">
+        <img src="images/wildernessfinalsize.png" alt="graphic2">
+        <p style="border:3px; border-style:solid; border-color:black; padding:0.5px; background-color:#f5f5f5;">The second graphic I also designed in Adobe Illustrator. My idea behond this design was inspired by the book <i>Into The Wild</i>,  and designed a girl running into the wild.</p>
+    </div>
+    <div class="graphic3">
+        <img src="images/perspectiveispower.png" alt="graphic3">
+        <p style="border:3px; border-style:solid; border-color:black; padding:0.5px; background-color:#f5f5f5;">The last graphic shown was also designed in Adobe Illustrator. This graphic is a visual representation of one of my favorite qoutes that has resonated with me and a reminder everyday.</p>
+    </div>
+    </div>
+    <div class="container4">
+        <div id="writing"></div>
+        <h3><u>Writings</u></h3>
+        <div class="writing1">
+            <img src="images/bodypoem.png" alt="poem1">
+            <p style="border:3px; border-style:solid; border-color:black; padding:0.5px; background-color:#f5f5f5;">This first writing is poem I wrote in my poetry class for my creative writing minor. This poem was written in the mind of all women my age. The feeling and constant mental battle of these thoughts.</p>
+       </div>
+        <div class="writing2">
+        <img src="images/runninglowwriting.png" alt="poem2">
+        <p style="border:3px; border-style:solid; border-color:black; padding:0.5px; background-color:#f5f5f5;">This second writing is also a poem I wrote in my poetry class. We were asked to write about a common feeling. Due to this class taking place during stressful COVID times, I related it to anxiety and exhaustion.</p>
+    </div>
+        <div class="writing3">
+        <img src="images/intomymind1.png" alt="excerpt1">
+        <p style="border:3px; border-style:solid; border-color:black; padding:0.5px; background-color:#f5f5f5;">This third writing was an excerpt from my own personal journal. I have spent time over the years writing down excerpts throughout my day to day life. This excerpt discusses my growth as an individual during college.</p>
+    </div>
+</div>
+<div class="container5">
+    <div id="contact"></div>
+    <div class="contactinfo">
+    <h4><u>Contact Me</u></h4></div>
+    <div class="contacticons">
+        <h5>Contact Information:</h5>
+        <p><div class="email"><i class="fa-solid fa-envelope"></i><b>watkinlf@dukes.jmu.edu</b></div></p>
+        <p><div class="phone"><i class="fa-solid fa-phone"></i><b>(434)996-5534</b></div></p>
+</div>
+</div>
+<footer>Lillian Watkins<br>James Madison University<br>School of Media Arts & Design<br>Harrisonburg, VA
+</footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
+<div><a id="back2Top" title="Back to top" href="#">&#10148;</a></div>
+<script>
+/* Scroll to top when arrow up clicked BEGIN */
+$(window).scroll(function() {
+var height = $(window).scrollTop();
+if (height > 100) {
+$('#back2Top').fadeIn();
+} else {
+$('#back2Top').fadeOut();
+}
+});
+$(document).ready(function() {
+$("#back2Top").click(function(event) {
+event.preventDefault();
+$("html, body").animate({ scrollTop: 0 }, "slow");
+return false;
+});
+});
+/* Scroll to top when arrow up clicked END */
+</script> 
+<script>
+    const body = document.body;
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll <= 0) {
+    body.classList.remove("scroll-up")
+    }
+    
+    if (currentScroll > lastScroll && !body.classList.contains("scroll-down")) {
+    body.classList.remove("scroll-up")
+    body.classList.add("scroll-down")
+    }
+    
+    if (currentScroll < lastScroll && body.classList.contains("scroll-down")) {
+    body.classList.remove("scroll-down")
+    body.classList.add("scroll-up")
+    }
+    if (currentScroll <= 70) sticky.addClass('scroll-up')
+
+lastScroll = currentScroll;
+});
+</script>
+</body>
+</html>
